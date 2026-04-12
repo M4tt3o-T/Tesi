@@ -1,0 +1,26 @@
+Report Unico Esperimenti MLP
+==================================================================================================================================
+MLP (1024) | A:0.001 | AF:relu                     -> Accuracy:  92.3% ±  6.6%  | Tempo: 03:12:59
+MLP (1024) | A:0.01 | AF:relu                      -> Accuracy:  93.4% ±  5.4%  | Tempo: 02:06:21
+MLP (1024) | A:0.1 | AF:relu                       -> Accuracy:  90.9% ±  6.0%  | Tempo: 01:11:00
+MLP (1024) | A:0.001 | AF:tanh                     -> Accuracy:  92.2% ±  6.3%  | Tempo: 06:48:45
+MLP (1024) | A:0.01 | AF:tanh                      -> Accuracy:  93.2% ±  5.4%  | Tempo: 04:49:52
+MLP (1024) | A:0.1 | AF:tanh                       -> Accuracy:  88.3% ±  6.6%  | Tempo: 03:11:59
+MLP (512, 256) | A:0.001 | AF:relu                 -> Accuracy:  91.3% ±  7.0%  | Tempo: 01:31:44
+MLP (512, 256) | A:0.01 | AF:relu                  -> Accuracy:  94.6% ±  4.9%  | Tempo: 01:42:24
+MLP (512, 256) | A:0.1 | AF:relu                   -> Accuracy:  92.4% ±  7.3%  | Tempo: 01:11:40
+MLP (512, 256) | A:0.001 | AF:tanh                 -> Accuracy:  91.5% ±  7.3%  | Tempo: 02:30:55
+MLP (512, 256) | A:0.01 | AF:tanh                  -> Accuracy:  89.8% ±  7.4%  | Tempo: 02:26:36
+MLP (512, 256) | A:0.1 | AF:tanh                   -> Accuracy:  92.7% ±  7.0%  | Tempo: 01:53:39
+MLP (64, 128, 64) | A:0.001 | AF:relu              -> Accuracy:  88.8% ±  6.8%  | Tempo: 00:26:59
+MLP (64, 128, 64) | A:0.01 | AF:relu               -> Accuracy:  93.5% ±  7.4%  | Tempo: 00:26:30
+MLP (64, 128, 64) | A:0.1 | AF:relu                -> Accuracy:  92.0% ±  7.3%  | Tempo: 00:23:16
+MLP (64, 128, 64) | A:0.001 | AF:tanh              -> Accuracy:  90.4% ±  7.6%  | Tempo: 00:56:06
+MLP (64, 128, 64) | A:0.01 | AF:tanh               -> Accuracy:  90.1% ±  7.7%  | Tempo: 00:48:04
+MLP (64, 128, 64) | A:0.1 | AF:tanh                -> Accuracy:  93.1% ±  7.1%  | Tempo: 00:43:25
+MLP (256, 128, 64, 32, 16) | A:0.001 | AF:relu     -> Accuracy:  88.7% ±  9.2%  | Tempo: 00:36:56
+MLP (256, 128, 64, 32, 16) | A:0.01 | AF:relu      -> Accuracy:  93.7% ±  5.6%  | Tempo: 00:44:44
+MLP (256, 128, 64, 32, 16) | A:0.1 | AF:relu       -> Accuracy:  89.8% ±  8.2%  | Tempo: 00:45:33
+MLP (256, 128, 64, 32, 16) | A:0.001 | AF:tanh     -> Accuracy:  91.3% ±  7.2%  | Tempo: 01:08:55
+MLP (256, 128, 64, 32, 16) | A:0.01 | AF:tanh      -> Accuracy:  90.9% ±  7.8%  | Tempo: 01:03:53
+MLP (256, 128, 64, 32, 16) | A:0.1 | AF:tanh       -> Accuracy:  89.8% ±  8.6%  | Tempo: 01:02:13

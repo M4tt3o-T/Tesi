@@ -1,0 +1,129 @@
+========================= Classificatori veloci =========================
+
+------------------- balance=False e normalized=False --------------------
+
+ 1. Random Forest                  | Accuracy: 0.4337 | Tempo:    13.44 s
+ 2. KNN                            | Accuracy: 0.4063 | Tempo:     4.55 s
+ 3. XGBoost                        | Accuracy: 0.3544 | Tempo:    15.55 s
+ 4. Hist Gradient Boosting         | Accuracy: 0.3380 | Tempo:    11.01 s
+ 5. LightGBM                       | Accuracy: 0.3229 | Tempo:     8.62 s
+ 6. Decision Tree                  | Accuracy: 0.2608 | Tempo:     4.84 s
+ 7. Linear SVC                     | Accuracy: 0.1948 | Tempo:    16.69 s
+ 8. Logistic Regression            | Accuracy: 0.1722 | Tempo:    88.74 s
+ 9. Linear Discriminant            | Accuracy: 0.1627 | Tempo:     0.39 s
+10. Quadratic Discriminant         | Accuracy: 0.1614 | Tempo:     0.37 s
+11. Ridge Classifier               | Accuracy: 0.1560 | Tempo:     0.36 s
+12. AdaBoost                       | Accuracy: 0.0701 | Tempo:    13.20 s
+13. Naive Bayes                    | Accuracy: 0.0674 | Tempo:     0.30 s
+
+-------------------- balance=True e normalized=False --------------------
+
+ 1. KNN                            | Accuracy: 0.4141 | Tempo:     6.08 s
+ 2. Random Forest                  | Accuracy: 0.4067 | Tempo:    29.55 s
+ 3. Logistic Regression            | Accuracy: 0.3803 | Tempo:   238.75 s
+ 4. XGBoost                        | Accuracy: 0.3790 | Tempo:    40.89 s
+ 5. LightGBM                       | Accuracy: 0.3689 | Tempo:    22.65 s
+ 6. Hist Gradient Boosting         | Accuracy: 0.3426 | Tempo:    32.23 s
+ 7. Quadratic Discriminant         | Accuracy: 0.2939 | Tempo:     1.27 s
+ 8. Decision Tree                  | Accuracy: 0.2919 | Tempo:    11.24 s
+ 9. Linear SVC                     | Accuracy: 0.2615 | Tempo:   169.33 s
+10. Linear Discriminant            | Accuracy: 0.2080 | Tempo:     1.42 s
+11. Ridge Classifier               | Accuracy: 0.1747 | Tempo:     1.54 s
+12. AdaBoost                       | Accuracy: 0.1360 | Tempo:    33.37 s
+13. Naive Bayes                    | Accuracy: 0.1016 | Tempo:     1.14 s
+
+-------------------- balance=False e normalized=True --------------------
+
+ 1. XGBoost                        | Accuracy: 0.4838 | Tempo:    17.11 s
+ 2. Random Forest                  | Accuracy: 0.4750 | Tempo:    20.12 s
+ 3. LightGBM                       | Accuracy: 0.4744 | Tempo:     8.35 s
+ 4. KNN                            | Accuracy: 0.4734 | Tempo:     3.95 s
+ 5. Hist Gradient Boosting         | Accuracy: 0.4719 | Tempo:    17.92 s
+ 6. Decision Tree                  | Accuracy: 0.3360 | Tempo:     9.14 s
+ 7. Quadratic Discriminant         | Accuracy: 0.0706 | Tempo:     0.37 s
+ 8. Naive Bayes                    | Accuracy: 0.0633 | Tempo:     0.30 s
+ 9. AdaBoost                       | Accuracy: 0.0485 | Tempo:    27.24 s
+10. Logistic Regression            | Accuracy: 0.0439 | Tempo:    13.45 s
+11. Linear SVC                     | Accuracy: 0.0426 | Tempo:    27.03 s
+12. Linear Discriminant            | Accuracy: 0.0426 | Tempo:     0.39 s
+13. Ridge Classifier               | Accuracy: 0.0426 | Tempo:     0.35 s
+
+-------------------- balance=True e normalized=True ---------------------
+
+ 1. KNN                            | Accuracy: 0.5307 | Tempo:     5.59 s
+ 2. Random Forest                  | Accuracy: 0.4916 | Tempo:    42.35 s
+ 3. LightGBM                       | Accuracy: 0.4873 | Tempo:    22.92 s
+ 4. XGBoost                        | Accuracy: 0.4857 | Tempo:    44.36 s
+ 5. Hist Gradient Boosting         | Accuracy: 0.4818 | Tempo:    43.37 s
+ 6. Decision Tree                  | Accuracy: 0.4140 | Tempo:    16.54 s
+ 7. AdaBoost                       | Accuracy: 0.1952 | Tempo:    55.34 s
+ 8. Logistic Regression            | Accuracy: 0.1716 | Tempo:    19.66 s
+ 9. Linear Discriminant            | Accuracy: 0.1701 | Tempo:     1.03 s
+10. Linear SVC                     | Accuracy: 0.1125 | Tempo:   134.32 s
+11. Ridge Classifier               | Accuracy: 0.1071 | Tempo:     0.87 s
+12. Quadratic Discriminant         | Accuracy: 0.0263 | Tempo:     0.90 s
+13. Naive Bayes                    | Accuracy: 0.0207 | Tempo:     0.75 s
+
+================================== MLP ==================================
+
+------------------- balance=False e normalized=False --------------------
+
+ 1. MLP Diamante (64, 128, 64)     | Accuracy: 0.3846 | Tempo:   215.16 s
+ 2. MLP Grande (256, 128, 64)      | Accuracy: 0.3661 | Tempo:   400.07 s
+ 3. MLP Cilindro (128, 64, 32)     | Accuracy: 0.3568 | Tempo:   177.84 s
+ 4. MLP Piatta (128,)              | Accuracy: 0.3563 | Tempo:   165.13 s
+ 5. MLP Leggera (64, 64)           | Accuracy: 0.3545 | Tempo:    96.72 s
+ 6. MLP Originale (20,)            | Accuracy: 0.2785 | Tempo:   113.51 s
+
+-------------------- balance=True e normalized=False --------------------
+
+ 1. MLP Diamante (64, 128, 64)     | Accuracy: 0.3938 | Tempo:   497.13 s
+ 2. MLP Cilindro (128, 64, 32)     | Accuracy: 0.3722 | Tempo:   581.82 s
+ 3. MLP Grande (256, 128, 64)      | Accuracy: 0.3715 | Tempo:  1001.71 s
+ 4. MLP Piatta (128,)              | Accuracy: 0.3535 | Tempo:   253.46 s
+ 5. MLP Leggera (64, 64)           | Accuracy: 0.3483 | Tempo:   164.26 s
+ 6. MLP Originale (20,)            | Accuracy: 0.2909 | Tempo:   193.65 s
+
+-------------------- balance=False e normalized=True --------------------
+
+ 1. MLP Grande (256, 128, 64)      | Accuracy: 0.3857 | Tempo:   498.56 s
+ 2. MLP Diamante (64, 128, 64)     | Accuracy: 0.3852 | Tempo:   260.36 s
+ 3. MLP Cilindro (128, 64, 32)     | Accuracy: 0.3392 | Tempo:   246.84 s
+ 4. MLP Leggera (64, 64)           | Accuracy: 0.3237 | Tempo:   125.49 s
+ 5. MLP Piatta (128,)              | Accuracy: 0.3030 | Tempo:   124.78 s
+ 6. MLP Originale (20,)            | Accuracy: 0.2704 | Tempo:   280.42 s
+
+-------------------- balance=True e normalized=True ---------------------
+
+ 1. MLP Diamante (64, 128, 64)     | Accuracy: 0.4068 | Tempo:   500.03 s
+ 2. MLP Leggera (64, 64)           | Accuracy: 0.4017 | Tempo:   322.19 s
+ 3. MLP Cilindro (128, 64, 32)     | Accuracy: 0.3990 | Tempo:   465.89 s
+ 4. MLP Grande (256, 128, 64)      | Accuracy: 0.3767 | Tempo:  1117.92 s
+ 5. MLP Piatta (128,)              | Accuracy: 0.3574 | Tempo:   423.06 s
+ 6. MLP Originale (20,)            | Accuracy: 0.2741 | Tempo:   858.50 s
+
+========================= Classificatori lenti ==========================
+
+------------------- balance=False e normalized=False --------------------
+
+ 1. Gradient Boosting              | Accuracy: 0.3270 | Tempo:  1524.52 s
+ 2. SVM (Linear Kernel)            | Accuracy: 0.3237 | Tempo:  3199.61 s
+ 3. SVM (gaussian)                 | Accuracy: 0.1856 | Tempo:  1173.62 s
+
+-------------------- balance=True e normalized=False --------------------
+
+ 1. SVM (Linear Kernel)            | Accuracy: 0.4046 | Tempo: 20636.05 s
+ 2. Gradient Boosting              | Accuracy: 0.2655 | Tempo:  3806.83 s
+ 3. SVM (gaussian)                 | Accuracy: 0.0888 | Tempo:  7826.59 s
+
+-------------------- balance=False e normalized=True --------------------
+
+ 1. Gradient Boosting              | Accuracy: 0.4248 | Tempo:  2789.51 s
+
+SVM (Linear Kernel) e SVM (gaussian) non convergono
+
+-------------------- balance=True e normalized=True ---------------------
+
+ 1. Gradient Boosting              | Accuracy: 0.4530 | Tempo:  6183.19 s
+
+SVM (Linear Kernel) e SVM (gaussian) non convergono

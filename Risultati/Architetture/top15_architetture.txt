@@ -1,0 +1,17 @@
+=== TOP 15 CONFIGURAZIONI MLP  ===
+==================================================================================================================================
+1° Posto | MLP (512, 256)                 -> Accuracy:  94.6% ±  4.9%  | Tempo: 01:40:42
+2° Posto | MLP (256, 128, 64, 32, 16)     -> Accuracy:  93.7% ±  5.6%  | Tempo: 00:44:17
+3° Posto | MLP (128, 96, 64, 32, 16)      -> Accuracy:  93.7% ±  6.0%  | Tempo: 00:36:55
+4° Posto | MLP (128, 128)                 -> Accuracy:  93.6% ±  5.6%  | Tempo: 00:34:12
+5° Posto | MLP (64, 128, 64)              -> Accuracy:  93.5% ±  7.4%  | Tempo: 00:26:57
+6° Posto | MLP (1024,)                    -> Accuracy:  93.4% ±  5.4%  | Tempo: 01:57:09
+7° Posto | MLP (128, 256, 128)            -> Accuracy:  93.3% ±  6.8%  | Tempo: 00:47:01
+8° Posto | MLP (512,)                     -> Accuracy:  93.1% ±  5.6%  | Tempo: 01:10:03
+9° Posto | MLP (64, 128)                  -> Accuracy:  93.1% ±  7.0%  | Tempo: 00:28:52
+10° Posto | MLP (128, 64)                  -> Accuracy:  92.5% ±  7.5%  | Tempo: 00:28:16
+11° Posto | MLP (8, 16, 32, 64)            -> Accuracy:  91.7% ±  6.4%  | Tempo: 00:25:32
+12° Posto | MLP (64, 64)                   -> Accuracy:  91.4% ±  7.5%  | Tempo: 00:21:44
+13° Posto | MLP (32, 32)                   -> Accuracy:  91.4% ±  7.6%  | Tempo: 00:21:48
+14° Posto | MLP (64, 32)                   -> Accuracy:  90.9% ±  7.9%  | Tempo: 00:21:11
+15° Posto | MLP (16, 32)                   -> Accuracy:  90.8% ±  8.0%  | Tempo: 00:20:04
