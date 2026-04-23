@@ -1,0 +1,67 @@
+03/25
+
+Continuo con i test degli MLP, sto cercando di capire qual è il modello migliore variando max_iter (mantenendo early_stopping=False).
+Dopo i test il modello migliore sull'intero dataset è MLP Diamante con max_iter=150, accuracy: 72.3% +- 7.6%
+
+Provo ad aggiungere una centratura per esperimento basandomi sul possibile valore di baseline differente per ogni esperimento, inoltre aggiungo un sistema di feature engineering che porterà il dataset ad avere colonne con all'interno rapporti tra i valori dei sensori.
+Ho testato tre modelli (mlp, lightgmb e random forest) sui dataset con le feature, sia bilanciandoli che non, e i risultati dei dati bilanciati sono stati migliori.
+In generale lightGMB e random forest hanno ottenuto risultati migliori rispetto alla versione senza feature e bilanciamento, mentre mlp no
+
+
+03/26
+
+Ho separato la logica del bilanciamento dei dati in modo da poter usarla solo quando necessario.
+Ho modificato il metodo di addestramento di mlp per permettere l'early stopping implementando un metodo fai da te che crea un validation set personalizzato (diviso per esperimenti come il resto) e lo usa per addestrare parzialmente mlp fino alla massima accuratezza.
+Dopo i test con gli mlp mi sono reso conto che sto andando troppo oltre quello che dovrei fare senza ottenere alcun risultato utile, per questo ho eliminato le modifiche fatte finora.
+
+Continuo con la top 4 originale nei test sui sottoinsiemi di sostanze, ho aggiunto una stampa dei risultati alla fine della funzione di prova in modo da accoppiare ogni selezione nel main ai suoi risultati.
+
+
+03/28
+
+Per curiosità ho fatto dei test con altri mlp, i risultati sono in mlp_vari.txt
+
+
+03/30
+
+Ho modificato i test sugli mlp implementando una funzione di test sulle architetture (dimensioni degli strati) e una sulle configurazioni (diversi iperparametri).
+Test iniziati.
+
+
+03/31
+
+Ho implementato una nuova funzione di addestramento di mlp per ovviare al problema della rottura della logica di addestramento nella cross validation interna della funzione base di sklearn, in questo modo il modello verrà validato su un insieme di dati presi allo stesso modo di quelli di test (separati per esperimento).
+
+
+04/01
+
+Lascio perdere la nuova funzione di addestramento di mlp.
+Al momento devo selezionare un gruppo di sostanze per le quali scartare gli esperimenti stat (nel caso ce ne siano troppi pochi)
+
+Dopo di quello dovrò trovare il modello migliore in generale: lo farò testando varie configurazioni di mlp.
+Inoltre dovrò creare un modello in due fasi che riconosca se una sostanza è un idrocarburo e, se lo è, lo identifichi.
+
+
+04/03
+
+Dopo alcune modifiche come l'aumento delle max_iter a 2000 e l'early_stopping=False, ho iniziato i test sulle architetture per entrambi i modelli
+
+
+04/04
+
+Per il secondo modello finiscono i test sulle architetture con vincitori (per tipologia) [(64, 32), (64, 32, 16, 8), (64, 256, 64), (512,)].
+I test sulle configurazioni serviranno a determinare il modello più robusto, ovvero quello meno soggetto a oscillazioni nei risultati al variare degli iperparametri, il vincitore è (64, 256, 64).
+
+
+04/05
+
+I test per il secondo modello sono finiti, l'architettura vincente è: LightGBM -> MLP (64, 256, 64) -> soglia 0.7.
+
+
+04/06
+
+Finiscono i test sulle architetture per il primo modello, inizio con i test sulle configurazioni per alcune delle architetture migliori (selezionate per tipologia).
+
+
+04/09
+Finiscono i test sulle configurazioni per il primo modello, l'architettura vincente è: MLP (512, 256) | A:0.01 | AF:relu

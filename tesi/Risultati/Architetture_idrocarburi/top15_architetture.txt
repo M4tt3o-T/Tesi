@@ -1,0 +1,17 @@
+=== TOP 15 CONFIGURAZIONI MLP (Ordinate per Stage 2) ===
+==================================================================================================================================
+1° Posto | MLP (64, 32, 16, 8)            -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:03:46
+2° Posto | MLP (64, 32)                   -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:04:12
+3° Posto | MLP (128, 128, 64)             -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:06:32
+4° Posto | MLP (64, 256, 64)              -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:07:14
+5° Posto | MLP (64, 128, 256, 128, 64)    -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:06:57
+6° Posto | MLP (512,)                     -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:17:41
+7° Posto | MLP (512, 256)                 -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:17:54
+8° Posto | MLP (64, 64)                   -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:08:14
+9° Posto | MLP (32, 64)                   -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:07:06
+10° Posto | MLP (64, 128, 128, 64)         -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  99.2% ±  1.6% | Tempo: 00:05:22
+11° Posto | MLP (128, 128, 128)            -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  99.2% ±  1.6% | Tempo: 00:08:46
+12° Posto | MLP (64, 128)                  -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  99.2% ±  1.6% | Tempo: 00:09:48
+13° Posto | MLP (128, 64)                  -> Accuracy globale:  90.8% ±  6.6% | Accuracy stage 2:  99.1% ±  1.8% | Tempo: 00:06:11
+14° Posto | MLP (128, 256, 256, 128)       -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  99.1% ±  1.8% | Tempo: 00:09:12
+15° Posto | MLP (128, 128)                 -> Accuracy globale:  90.8% ±  6.6% | Accuracy stage 2:  99.1% ±  1.8% | Tempo: 00:12:09

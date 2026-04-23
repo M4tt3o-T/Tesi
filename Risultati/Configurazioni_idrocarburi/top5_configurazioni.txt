@@ -1,7 +1,3 @@
-=== TOP 5 CONFIGURAZIONI MLP (Ordinate per Stage 2) ===
+=== TOP 5 CONFIGURAZIONI (Ordinate per Stage 2) ===
 ==================================================================================================================================
-1° Posto | MLP (64, 32) | A:0.1 | AF:tanh           -> Accuracy globale:  91.0% ±  6.5% | Accuracy stage 2: 100.0% ±  0.0% | Tempo: 00:07:39
-2° Posto | MLP (64, 32, 16, 8) | A:0.01 | AF:relu   -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:03:55
-3° Posto | MLP (64, 256, 64) | A:0.01 | AF:relu     -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:11:08
-4° Posto | MLP (64, 256, 64) | A:0.1 | AF:tanh      -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:21:38
-5° Posto | MLP (512,) | A:0.01 | AF:relu            -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:23:27
+1° Posto | Gerarchico MLP (64, 32) | A:0.01 | AF:relu -> Accuracy globale: 100.0% ±  0.0%  | Accuracy stage 2: 100.0% ±  0.0%  | Tempo: 00:00:37

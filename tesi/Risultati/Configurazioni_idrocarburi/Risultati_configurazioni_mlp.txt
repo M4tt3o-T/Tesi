@@ -1,0 +1,26 @@
+Report Unico Esperimenti MLP
+==================================================================================================================================
+MLP (64, 32) | A:0.001 | AF:relu         -> Accuracy globale:  85.8% ±  8.1% | Accuracy stage 2:  95.2% ±  6.0% | Tempo: 00:06:17
+MLP (64, 32) | A:0.01 | AF:relu          -> Accuracy globale:  92.2% ±  3.4% | Accuracy stage 2:  95.7% ±  5.1% | Tempo: 00:05:19
+MLP (64, 32) | A:0.1 | AF:relu           -> Accuracy globale:  89.0% ±  8.9% | Accuracy stage 2:  93.4% ±  7.3% | Tempo: 00:04:14
+MLP (64, 32) | A:0.001 | AF:tanh         -> Accuracy globale:  89.5% ±  8.2% | Accuracy stage 2:  95.6% ±  6.9% | Tempo: 00:11:07
+MLP (64, 32) | A:0.01 | AF:tanh          -> Accuracy globale:  89.4% ±  8.0% | Accuracy stage 2:  95.5% ±  9.1% | Tempo: 00:09:35
+MLP (64, 32) | A:0.1 | AF:tanh           -> Accuracy globale:  91.0% ±  6.5% | Accuracy stage 2: 100.0% ±  0.0% | Tempo: 00:07:39
+MLP (64, 32, 16, 8) | A:0.001 | AF:relu  -> Accuracy globale:  90.7% ±  6.9% | Accuracy stage 2:  98.3% ±  4.1% | Tempo: 00:04:00
+MLP (64, 32, 16, 8) | A:0.01 | AF:relu   -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:03:55
+MLP (64, 32, 16, 8) | A:0.1 | AF:relu    -> Accuracy globale:  90.7% ±  6.9% | Accuracy stage 2:  98.3% ±  4.1% | Tempo: 00:03:46
+MLP (64, 32, 16, 8) | A:0.001 | AF:tanh  -> Accuracy globale:  90.7% ±  6.3% | Accuracy stage 2:  98.4% ±  3.7% | Tempo: 00:07:20
+MLP (64, 32, 16, 8) | A:0.01 | AF:tanh   -> Accuracy globale:  90.5% ±  6.8% | Accuracy stage 2:  97.1% ±  5.1% | Tempo: 00:07:50
+MLP (64, 32, 16, 8) | A:0.1 | AF:tanh    -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  99.1% ±  1.8% | Tempo: 00:08:03
+MLP (64, 256, 64) | A:0.001 | AF:relu    -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  98.8% ±  2.6% | Tempo: 00:13:17
+MLP (64, 256, 64) | A:0.01 | AF:relu     -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:11:08
+MLP (64, 256, 64) | A:0.1 | AF:relu      -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  98.8% ±  2.6% | Tempo: 00:08:44
+MLP (64, 256, 64) | A:0.001 | AF:tanh    -> Accuracy globale:  90.7% ±  6.9% | Accuracy stage 2:  98.3% ±  4.1% | Tempo: 00:28:22
+MLP (64, 256, 64) | A:0.01 | AF:tanh     -> Accuracy globale:  90.7% ±  6.9% | Accuracy stage 2:  98.3% ±  4.1% | Tempo: 00:24:56
+MLP (64, 256, 64) | A:0.1 | AF:tanh      -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:21:38
+MLP (512,) | A:0.001 | AF:relu           -> Accuracy globale:  90.8% ±  6.4% | Accuracy stage 2:  98.8% ±  2.6% | Tempo: 00:31:31
+MLP (512,) | A:0.01 | AF:relu            -> Accuracy globale:  90.9% ±  6.5% | Accuracy stage 2:  99.7% ±  1.0% | Tempo: 00:23:27
+MLP (512,) | A:0.1 | AF:relu             -> Accuracy globale:  90.8% ±  6.6% | Accuracy stage 2:  99.1% ±  1.8% | Tempo: 00:14:14
+MLP (512,) | A:0.001 | AF:tanh           -> Accuracy globale:  90.5% ±  6.9% | Accuracy stage 2:  97.0% ±  4.5% | Tempo: 01:14:47
+MLP (512,) | A:0.01 | AF:tanh            -> Accuracy globale:  90.5% ±  6.7% | Accuracy stage 2:  96.9% ±  4.5% | Tempo: 00:59:02
+MLP (512,) | A:0.1 | AF:tanh             -> Accuracy globale:  90.5% ±  6.2% | Accuracy stage 2:  96.5% ±  4.3% | Tempo: 00:49:54
