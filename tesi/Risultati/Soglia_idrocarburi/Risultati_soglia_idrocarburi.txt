@@ -1,0 +1,7 @@
+Report Test Soglie MLP
+==================================================================================================================================
+Gerarchico soglia 0.4          -> Accuracy globale:  85.8% ±  8.4% | Accuracy stage 2:  95.3% ±  6.4% | Tempo: 00:09:36
+Gerarchico soglia 0.5          -> Accuracy globale:  92.5% ±  3.6% | Accuracy stage 2:  97.3% ±  4.8% | Tempo: 00:08:34
+Gerarchico soglia 0.6          -> Accuracy globale:  89.5% ±  9.3% | Accuracy stage 2:  92.6% ±  9.4% | Tempo: 00:09:01
+Gerarchico soglia 0.7          -> Accuracy globale:  91.4% ±  7.6% | Accuracy stage 2:  95.6% ±  7.5% | Tempo: 00:10:20
+Gerarchico soglia 0.8          -> Accuracy globale:  90.6% ±  6.6% | Accuracy stage 2:  93.5% ±  6.2% | Tempo: 00:08:41

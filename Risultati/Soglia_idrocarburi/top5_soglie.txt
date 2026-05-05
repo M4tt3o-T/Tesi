@@ -1,0 +1,4 @@
+=== TOP 5 CONFIGURAZIONI (Ordinate per Stage 2) ===
+==================================================================================================================================
+1° Posto | Gerarchico Soglia 0.5                    -> Accuracy globale: 100.0% ±  0.0%  | Accuracy stage 2: 100.0% ±  0.0%  | Tempo: 00:00:36
+2° Posto | Gerarchico Soglia 0.8                    -> Accuracy globale: 100.0% ±  0.0%  | Accuracy stage 2: 100.0% ±  0.0%  | Tempo: 00:00:36

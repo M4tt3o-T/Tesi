@@ -1,7 +1,0 @@
-Preprocessing: Z-score normalization (mean=0, std=1)
-Model: Multi-Layer Perceptron
-Hidden Layers: 25 neurons → 50 neurons → 25 neurons
-Activation: Default (ReLU for hidden, softmax for output)
-Max Iterations: 400
-Random Seed: 42
-Other: Adaptive learning rate (e.g., Adam), no regularization, no early stopping
