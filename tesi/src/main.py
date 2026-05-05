@@ -9,72 +9,110 @@ warnings.filterwarnings("ignore")
 
 
 def main():
-    print("=" * 70)
-    print(" INIZIALIZZAZIONE PIPELINE DI MACHINE LEARNING")
-    print("=" * 70)
+    print("=" * 80)
+    print(" PIPELINE DI MACHINE LEARNING - RIPRODUZIONE RISULTATI TESI")
+    print("=" * 80)
+
+    # =========================================================================
+    # PANNELLO DI CONTROLLO (Imposta a True le suite che desideri eseguire)
+    # =========================================================================
+    # FASE 1: Classificazione Flat Multi-Classe
+    ESEGUI_MODELLI_BASE = False  # Test algoritmi classici (KNN, Random Forest, ecc.)
+    ESEGUI_ARCHITETTURE_MLP = False  # Riproduce i risultati in 'Risultati/Architetture'
+    ESEGUI_CONFIGURAZIONI_MLP = (
+        False  # Riproduce i risultati in 'Risultati/Configurazioni'
+    )
+
+    # FASE 2: Architettura Gerarchica per Sicurezza
+    ESEGUI_STAGE1_BINARIO = False  # Riproduce i risultati del filtro binario (LightGBM)
+    ESEGUI_ARCHITETTURE_GERARCHICHE = (
+        False  # Riproduce 'Risultati/Architetture_idrocarburi'
+    )
+    ESEGUI_CONFIGURAZIONI_GERARCHICHE = (
+        False  # Riproduce 'Risultati/Configurazioni_idrocarburi'
+    )
+    ESEGUI_SOGLIE_GERARCHICHE = True  # Riproduce 'Risultati/Soglia_idrocarburi'
+    # =========================================================================
+
+    # Configurazioni di base per la riproduzione esatta (10-Fold CV su 25 classi)
+    ITERAZIONI = 10
+    dict_tutti_i_gas = {"TUTTI_I_GAS": config.COMPONENTS}
 
     # 1. SETUP DEI MODULI
-    print("\n[1] Caricamento e Preprocessing dei dati in corso...")
+    print("\n[1] Inizializzazione DataManager e Preprocessing in corso...")
     dm = DataManager()
 
-    # Applichiamo il preprocessing (Feature=True calcola media, std, max orizzontali)
+    # feature=True applica media, std, max e la soglia sul rumore ambientale
     dm.preprocess_data(feature=True)
 
     runner = ExperimentRunner(dm)
     evaluator = Evaluator()
 
-    # 2. DEFINIZIONE DEL SOTTOINSIEME DI TEST (Molto rapido)
-    # Includiamo un idrocarburo e un non-idrocarburo per testare la gerarchia
-    dict_gas_veloce = {"METHANE": ["METHANE"], "AMMONIA": ["AMMONIA"]}
-
-    # Numero di iterazioni ridotto per fare un test rapido del codice
-    ITERAZIONI_TEST = 2
-
     print(
-        f"\n[2] Dati pronti. Avvio delle Suite di Test con {ITERAZIONI_TEST} iterazioni."
+        f"\n[2] Moduli pronti. Avvio delle suite configurate (Iterazioni K-Fold: {ITERAZIONI})."
     )
 
     # =========================================================================
     # ESECUZIONE DELLE SUITE DI TEST
     # =========================================================================
 
-    # --- TEST 1: Modelli Classici Singoli (Fast Classifiers) ---
-    modelli_base_test = {
-        "KNN": config.FAST_CLASSIFIERS["KNN"],
-        "Decision Tree": config.FAST_CLASSIFIERS["Decision Tree"],
-    }
-    runner.run_classifier_suite(
-        suite_name="Test Modelli Base",
-        models_dict=modelli_base_test,
-        dict_comp=dict_gas_veloce,
-        evaluator=evaluator,
-        n_iter=ITERAZIONI_TEST,
-    )
+    # --- FASE 1: Modelli Classici Singoli (Baseline) ---
+    if ESEGUI_MODELLI_BASE:
+        runner.run_classifier_suite(
+            suite_name="Modelli Base Flat",
+            models_dict=config.TOP4_CLASSIFIERS,  # Oppure config.FAST_CLASSIFIERS
+            dict_comp=dict_tutti_i_gas,
+            evaluator=evaluator,
+            n_iter=ITERAZIONI,
+            undersampling=True,
+        )
 
-    # --- TEST 2: Solo Stage 1 Binario ---
-    runner.suite_stage1_binary(
-        dict_comp=dict_gas_veloce, evaluator=evaluator, n_iter=ITERAZIONI_TEST
-    )
+    # --- FASE 1: Ricerca Architetturale MLP ---
+    if ESEGUI_ARCHITETTURE_MLP:
+        runner.suite_architectures_mlp(
+            dict_comp=dict_tutti_i_gas, evaluator=evaluator, n_iter=ITERAZIONI
+        )
 
-    # --- TEST 3: Architetture Gerarchiche (Stage 1 + Stage 2) ---
-    runner.suite_architectures_hierarchical(
-        dict_comp=dict_gas_veloce, evaluator=evaluator, n_iter=ITERAZIONI_TEST
-    )
+    # --- FASE 1: Ricerca Configurazioni (Grid Search) MLP ---
+    if ESEGUI_CONFIGURAZIONI_MLP:
+        runner.suite_configurations_mlp(
+            dict_comp=dict_tutti_i_gas, evaluator=evaluator, n_iter=ITERAZIONI
+        )
 
-    # --- TEST 4: Configurazioni Gerarchiche ---
-    runner.suite_configurations_hierarchical(
-        dict_comp=dict_gas_veloce, evaluator=evaluator, n_iter=ITERAZIONI_TEST
-    )
+    # --- FASE 2: Validazione Stage 1 Binario ---
+    if ESEGUI_STAGE1_BINARIO:
+        runner.suite_stage1_binary(
+            dict_comp=dict_tutti_i_gas,
+            evaluator=evaluator,
+            n_iter=ITERAZIONI,
+            undersampling=True,
+        )
 
-    # --- TEST 5: Soglie di Confidenza Gerarchiche (Cestinamento) ---
-    runner.suite_thresholds_hierarchical(
-        dict_comp=dict_gas_veloce, evaluator=evaluator, n_iter=ITERAZIONI_TEST
-    )
+    # --- FASE 2: Ricerca Architetturale Specialista Idrocarburi ---
+    if ESEGUI_ARCHITETTURE_GERARCHICHE:
+        runner.suite_architectures_hierarchical(
+            dict_comp=dict_tutti_i_gas, evaluator=evaluator, n_iter=ITERAZIONI
+        )
 
-    print("\n" + "=" * 70)
-    print(" TUTTI I TEST SONO STATI COMPLETATI CON SUCCESSO!")
-    print(" Controlla la cartella 'Risultati/' per visualizzare i log e le metriche.")
-    print("=" * 70)
+    # --- FASE 2: Ricerca Configurazioni Specialista Idrocarburi ---
+    if ESEGUI_CONFIGURAZIONI_GERARCHICHE:
+        runner.suite_configurations_hierarchical(
+            dict_comp=dict_tutti_i_gas, evaluator=evaluator, n_iter=ITERAZIONI
+        )
+
+    # --- FASE 2: Ottimizzazione Soglia di Rigetto (Cestinamento) ---
+    if ESEGUI_SOGLIE_GERARCHICHE:
+        runner.suite_thresholds_hierarchical(
+            dict_comp=dict_tutti_i_gas, evaluator=evaluator, n_iter=ITERAZIONI
+        )
+
+    print("\n" + "=" * 80)
+    print(" ESECUZIONE DELLA PIPELINE COMPLETATA")
+    print(
+        " I file di log testuali e le Matrici di Confusione (.png) sono state aggiornate."
+    )
+    print(" Controlla la cartella 'Risultati/' per visualizzare i dettagli.")
+    print("=" * 80)
 
 
 if __name__ == "__main__":
