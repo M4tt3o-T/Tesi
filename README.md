@@ -1,4 +1,4 @@
-# Analisi e Classificazione Gerarchica di Segnali per Sensori di Gas
+# Sviluppo di un Framework di Machine Learning per l’Analisi e la Classificazione di Segnali da Sensori di Gas
 
 Questo repository contiene un'architettura software modulare sviluppata per processare, analizzare e classificare serie storiche di dati provenienti da matrici di sensori chimici. 
 Il progetto implementa una pipeline completa di Machine Learning, passando dall'estrazione delle feature fino all'approccio di "Classificazione Gerarchica" (con riconoscimento specifico di idrocarburi e logica di rigetto basata su soglie di confidenza).
@@ -41,7 +41,7 @@ Si consiglia di utilizzare un ambiente virtuale (es. `venv` o `conda`).
 3. **Preparazione dei Dati:**
    Al primo avvio, il sistema creerà in automatico un file di cache `.npy` per velocizzare i caricamenti successivi.
 
-## ⚙️ Esecuzione degli Esperimenti
+## Esecuzione degli Esperimenti
 
 L'intero sistema può essere controllato dal file `main.py`. 
 Per avviare l'addestramento e generare i risultati, basta eseguire:
